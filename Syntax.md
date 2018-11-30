@@ -64,3 +64,36 @@ Here's a few extra notes when using the syntax:
   - For the full list of easings, visit https://easings.net \
   (At the website, if you want to use, say 'easeInQuint', type 'inQuint' (without quotes) instead into the tween parameter)
   - You can also check ***tween.lua*** script and search for the tween.easing table. It lists all the easings supported
+
+## Public functions
+Public functions are called by the [CommandMeasure](https://docs.rainmeter.net/manual/bangs/#CommandMeasure) bang
+
+e.g. 
+~~~~
+[!CommandMeasure LuaTweener "Start(0)"]
+~~~~
+
+- **Start(index)**\
+  Plays the tween forward
+
+- **Reverse(index)**\
+  Plays the tween backwards
+
+- **Pause(index)**\
+  Pauses the tween from playing
+    
+- **Finish(index)**\
+  Sets the value to the EndValue
+
+- **Reset(index)**\
+  Sets the value to the Startalue
+
+- **Restart(index)**\
+  Calls Reset then Start together
+
+- **Rewind(index)**\
+  Calls Finish then Reverse together
+
+- **Reinit(index)**\
+  Reinitializes the tween and gets the new values (Have to be called manually, for now)
+

@@ -14,83 +14,8 @@
 
     -------------------------------------------------------------
 
-    Structure of Script Measure:
-    ~ TweenGroup=
-    ~ TweenN=
-      (where N is an ordered number from 0)
-
-    Docs:
-    ~ TweenGroup:   The group that will be updated and redraw (Set measures and meters to this group to receive updates from tweens)
-    ~ TweenN    :   The definition of the tween. There's two types of tween:
-
-                    ~ Single:
-                        ~ Single tweens one section's option only (The simplest tween there is)
-                        ~ Structure: *Single* | SectionName | OptionName | StartValue | EndValue | Duration | Easing(optional)
-
-                        e.g. Valid Syntax for (1)Meter, (2)Measure, (3)Variable tweens:
-                            (1) Single | MeterPopcorn | SolidColor | 0,0,0,100 | 50,50,180,255 | 100
-                            (2) Single | MeasureCakeSize | Formula | 10 | #MaxCakeSize# | 0.5 | outQuad
-                            (3) Single | Variable | Money | 0 | 10000 | 0.1 |
-                                (The last parameter is intentionally left empty, incase you forget to set easing, it will still work)
-
-                    ~ Chain:
-                        ~ Chain allows you to create multiple tweens at once and call them in intervals
-                        ~ Structure: *Chain* | SectionName | OptionName | StartValue | EndValue | Duration | Interval | SectionCount | Easing(optional)
-                        ~ Note: Interval refers to time between start of tweens
-
-                        e.g. Valid Syntax for (1)Meter, (2)Measure, (3)Variable tweens:
-                            (1) Chain | MeterLine%% | H | 0 | (#Size# * 100) | 100 | 50 | 100
-                            (2) Chain | MeasureBalloonSqueak(%%+1) | Formula | 10 | 1000 | 0.5 | inOutExpo
-                            (3) Chain | Variable | BankAccount%% | 1000000 | 0.02 | 0.1 | 1 | 10 |
-                                (The last parameter is intentionally left empty, incase you forget to set easing, it will still work)
-
-
-                    *Note:
-                        Duration and Interval parameters uses milliseconds, NOT seconds
-
-                    *Extra Syntax:
-                        (1): Use %% and it'l be replaced incrementally, from 0 to (Count-1)
-                        (2): ALWAYS use () when doing calculations, this script will parse the string all calculate it for you
-                    
-                    *Easing:
-                        For the full list of easings, visit https://easings.net
-                        (At the website, if you want to use, say 'easeInQuint', type 'inQuint' (without quotes) instead into the tween parameter)
-                        You can also check tween.lua script and search for the tween.easing table. It lists all the easings supported
-
-    -------------------------------------------------------------
-
-    Public functions:
-    ~ Start(index)
-        ~ Plays the tween forward
-
-    ~ Reverse(index)
-        ~ Plays the tween backwards
-
-    ~ Pause(index)
-        ~ Pauses the tween from playing
-        
-    ~ Finish(index)
-        ~ Sets the value to the EndValue
-
-    ~ Reset(index)
-        ~ Sets the value to the Startalue
-
-    ~ Restart(index)
-        ~ Calls Reset then Start together
-
-    ~ Rewind(index)
-        ~ Calls Finish then Reverse together
-
-    ~ Reinit(index)
-        ~ Reinitializes the tween and gets the new values
-
-    -------------------------------------------------------------
-    
-    Note:
-    ~ The value defined in the script measure is evaluated only once during skin start/refresh. 
-      This means the variables in used are not dynamic. The alternative currently is to call ReinitTween(index)
-      to get the new values, but I cant guarantee the performance of repeated calls of it. Dynamic tweens may be 
-      supported in the future :)
+    For syntaxes or tutorials:
+    Visit https://github.com/BjornLuG/LuaTween-for-Rainmeter
 ]]--
 
 
@@ -112,6 +37,10 @@ function Initialize()
     
     -- Whether redraw is needed, if any tween is playing.
     redraw = false
+    -- How many times to redraw (One frame redraws only once, 
+    -- so the number will be how many frames needed to redraw)
+    redrawTimes = 2
+    redrawsLeft = 0
 
     -- Populate tweensTable
     InitAllTweens()
@@ -126,8 +55,14 @@ function Update()
         UpdateTween(v)
     end
  
-    if redraw then
+    if redraw then 
+        redrawsLeft = redrawTimes
         redraw = false
+    end
+
+    if redrawsLeft > 0 then
+        redrawsLeft = redrawsLeft - 1
+        
         -- Updates and redraws group
         UpdateAndRedraw()
     end
