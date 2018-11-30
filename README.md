@@ -40,5 +40,5 @@ A short tutorial on how to use and create tweens can be found [here](https://git
 
 
 ## License
-License can be found in the [LICENSE.txt](https://github.com/BjornLuG/LuaTween-for-Rainmeter/blob/master/Tutorial.md) folder
+License can be found in the [LICENSE.txt](https://github.com/BjornLuG/LuaTween-for-Rainmeter/blob/master/LICENSE.txt) folder
 
