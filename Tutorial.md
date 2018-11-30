@@ -67,7 +67,7 @@ UpdateDivider=1
 
 (Note: If `Tweener.lua` is not located in *@Resources*, change `ScriptFile` to the path containing the script)
 
-Notice the `TweenGroup` option, this will be the group name that will be updated and redraw everytime this script tweens something. `UpdateDivider` is also set to 1 so it'll we run at `Update=16`.
+Notice the `TweenGroup` option, this will be the group name that will be updated and redraw everytime this script tweens something (Name it whatever you like). `UpdateDivider` is also set to 1 so it'll we run at `Update=16`.
 
 To create a tween, in the `[LuaTweener]` section, we'll declare a single-type tween. More info on types can be found [here](https://github.com/BjornLuG/LuaTween-for-Rainmeter/Syntax.md).
 
@@ -112,9 +112,9 @@ H=#BlockSize#
 SolidColor=130,130,100
 ~~~~
 
-And now we're done!! Save the skin and load it. Hover you mouse on the sky, and the block will fall. PS the block reverse back up when you leave the sky.
+And now we're done!! Save the skin and load it. Hover your mouse on the sky, and the block will fall. PS the block reverse back up when you leave the sky.
 
 ## What to do next
-This is just a small part of what LuaTween can do. Go check to Welcome.ini skin in this repo, it demonstrates what LuaTween fullest potential :)
+This is just a small part of what LuaTween can do. Go check the Welcome.ini skin in this repo, it demonstrates LuaTween's fullest potential :)
 
 Happy Tweening!

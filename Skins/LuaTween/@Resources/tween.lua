@@ -361,15 +361,6 @@ function Tween:finish()
   return self:set(self.duration)
 end
 
--- Added by Blu
-function Tween:isDone()
-  return self.clock >= self.duration
-end
-
--- Added by Blu
-function Tween:isZero()
-  return self.clock <= 0
-end
 
 -- Public interface
 
@@ -385,4 +376,5 @@ function tween.new(duration, subject, target, easing)
   }, Tween_mt)
 end
 
+-- Commented out by Blu
 -- return tween

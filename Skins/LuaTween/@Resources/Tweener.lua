@@ -205,7 +205,7 @@ function ReinitTween(index)
         local parentSubject = 
         {
             tweenType = tweenType,
-            sectionType = GetSectionType(doSub(sectionName, 0)),
+            sectionType = GetSectionType(DoSub(sectionName, 0)),
             optionName = optionName,
             -- State will be used to play tweens (Values: -1, 0, 1 (aka Reverse, Pause, Play))
             state = 0,
@@ -225,7 +225,7 @@ function ReinitTween(index)
         for j=0, tweenCount-1 do
             local subject = 
             {
-                sectionName = doSub(sectionName, j),
+                sectionName = DoSub(sectionName, j),
                 startTime = interval * j,
                 endTime = interval * j + duration,
                 -- this in charge of whether a clock has passed the time so itl only trigger the state once after passed
@@ -416,20 +416,20 @@ function split(str, delim, maxNb)
 end
 
 -- Substitue %% into i (a number)
-function doSub(value, i)
-	return value:gsub("%%%%", i):gsub("%(.+%)", parseFormula)
+function DoSub(value, i)
+	return value:gsub("%%%%", i):gsub("%(.+%)", ParseFormula)
 end
 
 -- Parse string to RM to be calculated
-function parseFormula(formula)
+function ParseFormula(formula)
 	return SKIN:ParseFormula(formula)
 end
 
--- String table to number table, and also call doSub(value, i) when converting
+-- String table to number table, and also call DoSub(value, i) when converting
 function ToNumberTable(table, optionIndex)
     optionIndex = optionIndex or 0
     for i in pairs(table) do 
-        local value = doSub(table[i], optionIndex)
+        local value = DoSub(table[i], optionIndex)
         table[i] = tonumber(value) 
     end
     return table

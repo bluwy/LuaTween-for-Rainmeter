@@ -95,5 +95,5 @@ e.g.
   Calls Finish then Reverse together
 
 - **Reinit(index)**\
-  Reinitializes the tween and gets the new values (Have to be called manually, for now)
+  Reinitializes the tween and gets the new values
 
