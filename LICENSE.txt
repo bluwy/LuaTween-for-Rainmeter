@@ -22,7 +22,7 @@ SOFTWARE.
 
 =====================================================================================
 
-The tweening functions were taken from kikito's tween.lua repository
+The tween.lua script was taken from kikito's tween.lua repository
 (https://github.com/kikito/tween.lua)
 
 Here's its license:

@@ -55,15 +55,15 @@ Here's a few extra notes when using the syntax:
 
 - *Duration* and *Interval* parameters uses **milliseconds**, NOT seconds
 
-- Extra Syntax:
+- **Extra Syntax:**
   - Use **%%** and it'll be replaced incrementally, from 0 to (SectionCount-1)\
   (Valid in Chain tweens only)
   - **ALWAYS** use () when doing calculations, this script will parse the string all calculate it for you
                     
-- Easing:
+- **Easings:**
   - For the full list of easings, visit https://easings.net \
   (At the website, if you want to use, say 'easeInQuint', type 'inQuint' (without quotes) instead into the tween parameter)
-  - You can also check ***tween.lua*** script and search for the tween.easing table. It lists all the easings supported
+  - You can also check the ***tween.lua*** script and search for the *tween.easing* table. It lists all the easings supported
 
 ## Public functions
 Public functions are called by the [CommandMeasure](https://docs.rainmeter.net/manual/bangs/#CommandMeasure) bang
