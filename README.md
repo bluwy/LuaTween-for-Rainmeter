@@ -30,15 +30,15 @@ Here's a quick walkthrough on how to use LuaTween
 
 
 ## Syntax
-List of syntaxes can be found [here](https://github.com/BjornLuG/LuaTween-for-Rainmeter/Syntax.md)
+List of syntaxes can be found [here](https://github.com/BjornLuG/LuaTween-for-Rainmeter/blob/master/Syntax.md)
 
 ## Tutorial
-A short tutorial on how to use and create tweens can be found [here](https://github.com/BjornLuG/LuaTween-for-Rainmeter/Tutorial.md)
+A short tutorial on how to use and create tweens can be found [here](https://github.com/BjornLuG/LuaTween-for-Rainmeter/blob/master/Tutorial.md)
 
 
 ---
 
 
 ## License
-License can be found in the [LICENSE.txt](https://github.com/BjornLuG/LuaTween-for-Rainmeter/LICENSE.txt) folder
+License can be found in the [LICENSE.txt](https://github.com/BjornLuG/LuaTween-for-Rainmeter/blob/master/Tutorial.md) folder
 

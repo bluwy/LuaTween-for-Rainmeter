@@ -10,12 +10,12 @@
     ~ Supports tweening meter options, measure options, variables and groups!
     ~ Easily tween a value with lesser syntax than manual tweening in Rainmeter
     ~ Credits: https://github.com/kikito/tween.lua for the tweening and easing functions
-    ~ License: https://github.com/BjornLuG/LuaTween-for-Rainmeter/LICENSE.txt
+    ~ License: https://github.com/BjornLuG/LuaTween-for-Rainmeter/blob/master/LICENSE.txt
 
     -------------------------------------------------------------
 
     For syntaxes or tutorials:
-    Visit https://github.com/BjornLuG/LuaTween-for-Rainmeter
+    Visit https://github.com/BjornLuG/LuaTween-for-Rainmeter/
 ]]--
 
 
