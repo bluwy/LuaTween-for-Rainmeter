@@ -127,16 +127,16 @@ function Reset(index)
     end
 end
 
--- Combine ResetTween and StartTween
+-- Combine Reset and Start
 function Restart(index)
-    ResetTween(index)
-    StartTween(index)
+    Reset(index)
+    Start(index)
 end
 
--- Combine FinishTween and ReverseTween
+-- Combine Finish and Reverse
 function Rewind(index)
-    FinishTween(index)
-    ReverseTween(index)
+    Finish(index)
+    Reverse(index)
 end
 
 -- Reinitializes the tween and gets the new values
