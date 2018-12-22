@@ -1,6 +1,6 @@
 --[[
     Author: Blu
-    Reddit: \u\IamLUG
+    Reddit: /u/IamLUG
     Github: https://github.com/BjornLuG
 
     ------------------------------------------------------------

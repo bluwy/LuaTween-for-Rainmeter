@@ -227,18 +227,19 @@ local function outInBounce(t, b, c, d)
   return inBounce((t * 2) - d, b + c / 2, c / 2, d)
 end
 
+-- Keys to lowercase by Blu, to enable case-insensitivity when using easings
 tween.easing = {
   linear    = linear,
-  inQuad    = inQuad,    outQuad    = outQuad,    inOutQuad    = inOutQuad,    outInQuad    = outInQuad,
-  inCubic   = inCubic,   outCubic   = outCubic,   inOutCubic   = inOutCubic,   outInCubic   = outInCubic,
-  inQuart   = inQuart,   outQuart   = outQuart,   inOutQuart   = inOutQuart,   outInQuart   = outInQuart,
-  inQuint   = inQuint,   outQuint   = outQuint,   inOutQuint   = inOutQuint,   outInQuint   = outInQuint,
-  inSine    = inSine,    outSine    = outSine,    inOutSine    = inOutSine,    outInSine    = outInSine,
-  inExpo    = inExpo,    outExpo    = outExpo,    inOutExpo    = inOutExpo,    outInExpo    = outInExpo,
-  inCirc    = inCirc,    outCirc    = outCirc,    inOutCirc    = inOutCirc,    outInCirc    = outInCirc,
-  inElastic = inElastic, outElastic = outElastic, inOutElastic = inOutElastic, outInElastic = outInElastic,
-  inBack    = inBack,    outBack    = outBack,    inOutBack    = inOutBack,    outInBack    = outInBack,
-  inBounce  = inBounce,  outBounce  = outBounce,  inOutBounce  = inOutBounce,  outInBounce  = outInBounce
+  inquad    = inQuad,    outquad    = outQuad,    inoutquad    = inOutQuad,    outinquad    = outInQuad,
+  incubic   = inCubic,   outcubic   = outCubic,   inoutcubic   = inOutCubic,   outincubic   = outInCubic,
+  inquart   = inQuart,   outquart   = outQuart,   inoutquart   = inOutQuart,   outinquart   = outInQuart,
+  inquint   = inQuint,   outquint   = outQuint,   inoutquint   = inOutQuint,   outinquint   = outInQuint,
+  insine    = inSine,    outsine    = outSine,    inoutsine    = inOutSine,    outinsine    = outInSine,
+  inexpo    = inExpo,    outexpo    = outExpo,    inoutexpo    = inOutExpo,    outinexpo    = outInExpo,
+  incirc    = inCirc,    outcirc    = outCirc,    inoutcirc    = inOutCirc,    outincirc    = outInCirc,
+  inelastic = inElastic, outelastic = outElastic, inoutelastic = inOutElastic, outinelastic = outInElastic,
+  inback    = inBack,    outback    = outBack,    inoutback    = inOutBack,    outinback    = outInBack,
+  inbounce  = inBounce,  outbounce  = outBounce,  inoutbounce  = inOutBounce,  outinbounce  = outInBounce
 }
 
 
@@ -290,17 +291,14 @@ end
 local function getEasingFunction(easing)
   easing = easing or "linear"
   if type(easing) == 'string' then
-    local name = easing
+    local name = easing:lower()
     easing = tween.easing[name]
 
-    -- Added by Blu
-    if easing == nil then 
+    if type(easing) ~= 'function' then
+      -- Added by Blu
       easing = tween.easing["linear"]
-      print("The easing function name '" .. name .. "' is invalid. Replaced to  linear")
+      error("The easing function name '" .. name .. "' is invalid. Replaced to \"linear\"")
     end
-    -- if type(easing) ~= 'function' then
-    --   error("The easing function name '" .. name .. "' is invalid")
-    -- end
   end
   return easing
 end
@@ -316,6 +314,7 @@ local function performEasingOnSubject(subject, target, initial, clock, duration,
     end
   end
 end
+
 
 -- Tween methods
 
@@ -361,6 +360,10 @@ function Tween:finish()
   return self:set(self.duration)
 end
 
+-- Added by Blu
+function Tween:setEasing(easing)
+  self.easing = getEasingFunction(easing)
+end
 
 -- Public interface
 
