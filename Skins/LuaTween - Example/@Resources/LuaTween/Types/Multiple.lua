@@ -75,7 +75,7 @@ local function Update(tween, child, dt)
             if indexerValue >= v.startPercent and indexerValue <= v.endPercent then
                 -- Manually set value rather than update for precision
                 v.tween:set(indexerValue - v.startPercent)
-                Shared.DoTweenBang(tween.sectionType, child.sectionName, tween.optionalName, Shared.TableToValue(v.value))
+                Shared.DoTweenBang(tween.sectionType, child.sectionName, child.optionalName, Shared.TableToValue(v.value))
                 break
             end
         end
@@ -123,7 +123,6 @@ function Multiple.New(index, unformatParams, unformatOptionals)
     local parentSubject = 
     {
         sectionType = Shared.GetSectionType(Shared.ParseFormula(Shared.DoSub(sectionName, 0))),
-        optionalName = optionalName,
         group = group,
         loop = Shared.CheckLoop(loop),
         children = {}
@@ -134,6 +133,7 @@ function Multiple.New(index, unformatParams, unformatOptionals)
         local subject = 
         {
             sectionName = Shared.ParseFormula(Shared.DoSub(sectionName, i)),
+            optionalName = Shared.ParseFormula(Shared.DoSub(optionalName, i)),
             state = 0,
             tweens = {},
             indexerValue = 0
