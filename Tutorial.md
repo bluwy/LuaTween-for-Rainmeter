@@ -78,7 +78,7 @@ The `[LuaTween]` section will then look something like this:
 ~~~~
 [LuaTween]
 Measure=Script
-ScriptFile=#@#Tweener.lua
+ScriptFile=#@#LuaTween/Main.lua
 TweenGroup=Tweenable
 Tween0=Single | Block | Y | 0 | (#Height# - #BlockSize#) | 500
 Optional0=Easing outBounce
