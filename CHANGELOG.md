@@ -1,15 +1,20 @@
-22 December 2018
-Version 2
+# Changelog
+
+## 2.0.0 - 2018-12-22
+
+### Added
 - Refactored the project
-- Added extandability to allow more custom tween types
-- Added Multiple type tween
-- Split tween definition to add more optionals
+- Extensibility to create custom tween types
+- Multiple type tween
 - New optionals! including easings, groups and loops
 - Support path values (Tween through multiple values)
 
+### Changed
+- Split tween definition to add more optionals
 
-30 November 2018
-Version 1
+## 1.0.0 - 2018-11-30
+
+### Added
 - Combine tween.lua with Rainmeter
 - Support Single and Chain type tween
 - Basic calling methods
