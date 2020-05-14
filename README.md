@@ -27,7 +27,7 @@ You can also reference how to setup all of the above in the provided skin, or al
 
 ## Reference
 
-- [Documentation](./Syntax.md)
+- [Documentation](./Documentation.md)
 - [Tutorial](./Tutorial.md)
 
 ## Attribution
