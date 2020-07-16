@@ -1,7 +1,7 @@
 --[[
     Author: Blu
     Reddit: /u/IamLUG
-    Github: https://github.com/BjornLuG
+    Github: https://github.com/bluwy
 
     ------------------------------------------------------------
 

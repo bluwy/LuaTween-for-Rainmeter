@@ -73,7 +73,7 @@ UpdateDivider=1
 
 Notice the `TweenGroup` option, this will be the group name that will be updated and redraw everytime this script tweens something (Name it whatever you like). `UpdateDivider` is also set to 1 so it'll run at `Update=16`.
 
-To create a tween, in the `[LuaTween]` section, we'll declare a single-type tween. More info on types can be found [here](https://github.com/BjornLuG/LuaTween-for-Rainmeter/blob/master/Syntax.md).
+To create a tween, in the `[LuaTween]` section, we'll declare a single-type tween. More info on types can be found [here](https://github.com/bluwy/LuaTween-for-Rainmeter/blob/master/Syntax.md).
 
 The single-type tween's parameters looks like this:
 
@@ -111,7 +111,7 @@ MouseOverAction=[!CommandMeasure LuaTween "Start(0)"]
 MouseLeaveAction=[!CommandMeasure LuaTween "Reverse(0)"]
 ```
 
-`MouseOverAction` and `MouseLeaveAction` will call when the mouse is over the sky or leaving the sky, which will start or reverse the tween respectively. More info on the bangs that can be called can be found [here](https://github.com/BjornLuG/LuaTween-for-Rainmeter/blob/master/Syntax.md).
+`MouseOverAction` and `MouseLeaveAction` will call when the mouse is over the sky or leaving the sky, which will start or reverse the tween respectively. More info on the bangs that can be called can be found [here](https://github.com/bluwy/LuaTween-for-Rainmeter/blob/master/Syntax.md).
 
 Yay we're done!! Woohoo.. or are we? One last step before everything works (A common mistake that even I made often), the `Block` needs to be in the group of `TweenGroup` defined in `[LuaTween]`
 
