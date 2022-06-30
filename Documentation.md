@@ -120,7 +120,7 @@ The easing used (Case insensitive) (Default: "linear")
 e.g.
 
 ```ini
-OptionN=Easing OutQuad
+Optional0=Easing OutQuad
 ```
 
 #### Group
@@ -133,7 +133,7 @@ The group name does not relate to Rainmeter's `Group` in any way. The name will 
 e.g.
 
 ```ini
-Option0=Easing OutQuad | Group TitleGroup
+Optional0=Easing OutQuad | Group TitleGroup
 ```
 
 #### Loop
@@ -145,7 +145,7 @@ The loop of the tween. Choices: `None`, `Restart` or `Yoyo`. (Case insensitive) 
 e.g.
 
 ```ini
-Option0=Easing OutQuad | Group TitleGroup | Loop yoyo
+Optional0=Easing OutQuad | Group TitleGroup | Loop yoyo
 ```
 
 ## Advanced
