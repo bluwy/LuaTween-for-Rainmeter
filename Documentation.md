@@ -120,7 +120,7 @@ The easing used (Case insensitive) (Default: "linear")
 e.g.
 
 ```ini
-OptionN=Easing OutQuad
+Optional0=Easing OutQuad
 ```
 
 #### Group
